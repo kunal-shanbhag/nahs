@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Shanbhag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .academic-serif { font-family: 'Playfair Display', Georgia, serif; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-[#FDFDFD] text-[#222222] antialiased min-h-screen flex flex-col tracking-wide relative">
+
+    <div class="max-w-3xl w-full mx-auto px-6 mt-16 md:mt-24">
+        <header class="flex flex-col md:flex-row md:items-baseline md:justify-between border-b border-gray-200 pb-4">
+            <div>
+                <h1 class="text-4xl font-normal tracking-tight text-gray-900 academic-serif">
+                    <a href="#" class="hover:text-gray-600 transition-colors">Kunal Shanbhag</a>
+                </h1>
+                <p class="text-sm text-gray-400 font-mono mt-1">North Andover High School</p>
+            </div>
+            <nav class="flex space-x-6 mt-4 md:mt-0 text-sm uppercase tracking-widest text-gray-500 font-medium">
+                <a href="#about" class="hover:text-black transition-colors">About</a>
+                <a href="#research" class="hover:text-black transition-colors">Research</a>
+                <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+                <a href="#hobbies" class="hover:text-black transition-colors">Hobbies</a>
+            </nav>
+        </header>
+    </div>
+
+    <main class="max-w-3xl w-full mx-auto px-6 flex-grow py-12 space-y-20">
+        
+        <section id="about" class="grid md:grid-cols-3 gap-8 items-start scroll-mt-24">
+            <div class="md:col-span-2 space-y-5 text-[17px] leading-relaxed text-gray-700 font-light">
+                <p>
+                    Hello! I’m a Junior at <a href="https://nahs.northandoverpublicschools.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">North Andover High School (NAHS)</a>. I am passionate about STEM, with a specific focus on robotics and computational biology. Outside of school, I play volleyball, love listening to music, and enjoy traveling whenever I can.
+                </p>
+                <p>
+                    I'm thrilled that I've been accepted into the prestigious <a href="https://stem.northeastern.edu/summer/ysp/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Northeastern University's 2026 Young Scholars Program</a> and will have the opportunity to conduct independent research in Prof. Rouzbeh Amini's lab for 6 weeks!
+                </p>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <div class="w-full aspect-square bg-gray-50 border border-gray-200 rounded overflow-hidden relative shadow-sm cursor-zoom-in" onclick="openModal('kunal-profile.png', 'Kunal Shanbhag')">
+                    <img src="kunal-profile.png" alt="Kunal Shanbhag" class="absolute inset-0 w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300">
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="space-y-6 border-t border-gray-100 pt-10 scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-4">
+                <h2 class="text-base uppercase tracking-widest font-semibold text-gray-900">Research Interests</h2>
+                
+                <div class="flex space-x-2 bg-gray-100 p-1 rounded text-xs font-medium">
+                    <button id="btn-compbio" onclick="switchResearchTab('compbio')" class="px-3 py-1.5 rounded transition-all bg-white text-gray-900 shadow-sm">
+                        Computational Biology
+                    </button>
+                    <button id="btn-robotics" onclick="switchResearchTab('robotics')" class="px-3 py-1.5 rounded transition-all text-gray-500 hover:text-gray-900">
+                        Robotics 
+                    </button>
+                </div>
+            </div>
+
+            <div id="tab-compbio" class="space-y-6 block">
+                <div class="text-[17px] leading-relaxed text-gray-700 font-light space-y-4">
+                    <p>
+                        My interest in Computational Biology is deeply personal. After losing my grandfather to Multiple System Atrophy (MSA), my father explained that there is currently no cure for this rare neurodegenerative disease. That conversation changed how I viewed science. I realized that when there aren’t clear answers, research is how people slowly work toward understanding.
+                    </p>
+                    <p>
+                        As I explored science beyond my coursework, I became fascinated by how artificial intelligence can be applied to biology. I first learned about AlphaGo and was amazed by how a computer could learn and improve through experience. This led me to read about AlphaFold and how similar ideas could be used to predict protein structures, a problem that had challenged scientists for decades. When I later learned about AlphaGenome, I was struck by how much remains unknown, especially in non-coding regions of DNA.
+                    </p>
+                    <p>
+                       I'd like to better understand how computational tools can be used alongside biological data to study real diseases like MSA.
+                    </p>
+                </div>
+            </div>
+
+            <div id="tab-robotics" class="space-y-6 hidden">
+                <div class="text-[17px] leading-relaxed text-gray-700 font-light space-y-4">
+                    <p>
+                        I'm the Lead Mechanical Designer for our NAHS Robotics Team <span class="font-mono font-medium text-gray-900">8568F</span>. Our team has won the Design Award and Tournament Champion Award and qualified for State Level Championships for three consecutive years.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="flex flex-col">
+                        <div class="w-full aspect-[4/3] bg-gray-50 border border-gray-200 rounded overflow-hidden shadow-sm cursor-zoom-in" onclick="openModal('our-bot.jpg', 'Team 8568F winning bot')">
+                            <img src="our-bot.jpg" alt="VEX Build" class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300">
+                        </div>
+                        <span class="text-xs text-gray-400 font-mono mt-1.5">Team 8568F winning bot</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="w-full aspect-[4/3] bg-gray-50 border border-gray-200 rounded overflow-hidden shadow-sm cursor-zoom-in" onclick="openModal('Vex-finalscore.jpg', 'Vex Competition, Hamilton, MA')">
+                            <img src="Vex-finalscore.jpg" alt="VEX Score" class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300">
+                        </div>
+                        <span class="text-xs text-gray-400 font-mono mt-1.5">Vex Competition, Hamilton, MA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="space-y-6 border-t border-gray-100 pt-10 scroll-mt-24">
+            <div class="flex items-baseline justify-between">
+                <h2 class="text-base uppercase tracking-widest font-semibold text-gray-900">Technical Projects</h2>
+                <span class="text-sm font-mono text-gray-400">Repositories & CAD Files</span>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="border border-dashed border-gray-200 p-6 rounded bg-[#FCFCFC] flex flex-col justify-between min-h-[140px]">
+                    <div>
+                        <h3 class="text-base font-medium text-gray-400 font-mono uppercase tracking-wider">Fusion 360 Assemblies</h3>
+                        <p class="text-sm text-gray-400 font-sans mt-2 leading-relaxed">
+                            CAD project directories and stress analysis graphs will be cataloged here.
+                        </p>
+                    </div>
+                    <span class="text-xs text-gray-300 font-mono uppercase mt-4">&bull; Coming Soon...</span>
+                </div>
+
+                <div class="border border-dashed border-gray-200 p-6 rounded bg-[#FCFCFC] flex flex-col justify-between min-h-[140px]">
+                    <div>
+                        <h3 class="text-base font-medium text-gray-400 font-mono uppercase tracking-wider">Code Assignments</h3>
+                        <p class="text-sm text-gray-400 font-sans mt-2 leading-relaxed">
+                            Python algorithms and computational notebooks will be embedded here.
+                        </p>
+                    </div>
+                    <span class="text-xs text-gray-300 font-mono uppercase mt-4">&bull; Coming Soon...</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies" class="space-y-6 border-t border-gray-100 pt-10 scroll-mt-24">
+            <h2 class="text-base uppercase tracking-widest font-semibold text-gray-900">Hobbies & Personal Interests</h2>
+            
+            <div class="space-y-6">
+                <div class="text-[17px] text-gray-600 font-light leading-relaxed">
+                    <ul class="space-y-4 pl-1 text-base text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span class="font-mono text-gray-400 text-sm mt-0.5">01/</span>
+                            <span><strong class="font-medium text-gray-900">Sports</strong> — NAHS Volleyball and NAMS baseball</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-mono text-gray-400 text-sm mt-0.5">02/</span>
+                            <span><strong class="font-medium text-gray-900">Music</strong> — Love relaxing to various genres </span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="font-mono text-gray-400 text-sm mt-0.5">03/</span>
+                            <span><strong class="font-medium text-gray-900">Travel</strong> — I love traveling and exploring new cultures</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 max-w-2xl pt-2">
+                    <div class="w-full aspect-[4/3] bg-gray-50 border border-gray-200 rounded overflow-hidden shadow-sm cursor-zoom-in" onclick="openModal('jv-volleyball-nahs.jpg', 'Volleyball')">
+                        <img src="jv-volleyball-nahs.jpg" alt="Volleyball" class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+                    <div class="w-full aspect-[4/3] bg-gray-50 border border-gray-200 rounded overflow-hidden shadow-sm cursor-zoom-in" onclick="openModal('baseball-middle-school.jpg', 'Baseball')">
+                        <img src="baseball-middle-school.jpg" alt="Baseball" class="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <h3 class="text-sm uppercase tracking-wider font-semibold text-gray-400 font-mono mb-2">Core Competencies</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 font-mono text-sm text-gray-600 bg-gray-50 p-4 rounded">
+                    <div>&bull; ChatGpt/Claude</div>
+                    <div>&bull; Python</div>
+                    <div>&bull; Fusion 360</div>
+                    <div>&bull; CAD Modeling</div>
+                    <div>&bull; Diagnostics</div>
+                    <div>&bull; Prototyping</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="volunteering" class="space-y-6 border-t border-gray-100 pt-10 scroll-mt-24">
+            <div class="flex items-baseline justify-between">
+                <h2 class="text-base uppercase tracking-widest font-semibold text-gray-900">Volunteering Experience</h2>
+                <span class="text-xs font-mono text-gray-400 uppercase">Community Impact</span>
+            </div>
+            
+            <div class="text-[17px] text-gray-700 font-light leading-relaxed space-y-4">
+                <div class="border-b border-gray-50 pb-3 flex items-start gap-2">
+                    <span class="font-mono text-gray-400 text-sm mt-1">&bull;</span>
+                    <span><strong class="font-medium text-gray-900">Amnesty International Club</strong> — Co-founded the club to highlight regional human rights awareness.</span>
+                </div>
+                <div class="border-b border-gray-50 pb-3 flex items-start gap-2">
+                    <span class="font-mono text-gray-400 text-sm mt-1">&bull;</span>
+                    <span><strong class="font-medium text-gray-900">Ironstone Farm</strong> — Assisted in specialized therapeutic riding sessions designed for kids with physical and developmental disabilities.</span>
+                </div>
+                <div class="border-b border-gray-50 pb-3 flex items-start gap-2">
+                    <span class="font-mono text-gray-400 text-sm mt-1">&bull;</span>
+                    <span><strong class="font-medium text-gray-900">Indian Association of Merrimack Valley</strong> — Organized and led youth teams serving meals at the Lazarus House soup kitchen.</span>
+                </div>
+                <div class="border-b border-gray-50 pb-3 flex items-start gap-2">
+                    <span class="font-mono text-gray-400 text-sm mt-1">&bull;</span>
+                    <span><strong class="font-medium text-gray-900">North Andover CAM</strong> — Filmed various NAHS sporting events using professional media equipment.</span>
+                </div>
+                <div class="flex items-start gap-2">
+                    <span class="font-mono text-gray-400 text-sm mt-1">&bull;</span>
+                    <span><strong class="font-medium text-gray-900">Special Olympics</strong> — Event logistics and support coordinator helping local athletes compete safely and successfully.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-3xl w-full mx-auto px-6 py-12 border-t border-gray-100 text-left text-sm tracking-wide text-gray-400 font-light">
+        <p>&copy; Kunal Shanbhag </p>
+    </footer>
+
+    <div id="imageModal" class="fixed inset-0 bg-black/85 hidden z-50 items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeModal()">
+        <div class="relative max-w-4xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+            <button class="absolute -top-10 right-0 text-white font-mono text-sm uppercase tracking-widest hover:text-gray-300 transition-colors" onclick="closeModal()">
+                [ Close ]
+            </button>
+            <img id="modalImage" src="" alt="" class="object-contain max-w-full max-h-[80vh] rounded shadow-2xl">
+            <p id="modalCaption" class="text-gray-300 text-sm font-mono mt-4 text-center tracking-wide"></p>
+        </div>
+    </div>
+
+    <script>
+        function switchResearchTab(targetTab) {
+            const compBioTab = document.getElementById('tab-compbio');
+            const roboticsTab = document.getElementById('tab-robotics');
+            const compBioBtn = document.getElementById('btn-compbio');
+            const roboticsBtn = document.getElementById('btn-robotics');
+
+            if (targetTab === 'compbio') {
+                compBioTab.classList.remove('hidden');
+                compBioTab.classList.add('block');
+                roboticsTab.classList.remove('block');
+                roboticsTab.classList.add('hidden');
+                compBioBtn.className = "px-3 py-1.5 rounded transition-all bg-white text-gray-900 shadow-sm";
+                roboticsBtn.className = "px-3 py-1.5 rounded transition-all text-gray-500 hover:text-gray-900";
+            } else if (targetTab === 'robotics') {
+                roboticsTab.classList.remove('hidden');
+                roboticsTab.classList.add('block');
+                compBioTab.classList.remove('block');
+                compBioTab.classList.add('hidden');
+                roboticsBtn.className = "px-3 py-1.5 rounded transition-all bg-white text-gray-900 shadow-sm";
+                compBioBtn.className = "px-3 py-1.5 rounded transition-all text-gray-500 hover:text-gray-900";
+            }
+        }
+
+        // Modal Functionality
+        function openModal(imageSrc, captionText) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCap = document.getElementById('modalCaption');
+
+            modalImg.src = imageSrc;
+            modalImg.alt = captionText;
+            modalCap.textContent = captionText;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Allow browser to register display change for fluid Tailwind animation
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            }, 20);
+            
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 300);
+
+            document.body.style.overflow = ''; // Unlock background scroll
+        }
+
+        // Close modal gracefully on Escape key press
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
