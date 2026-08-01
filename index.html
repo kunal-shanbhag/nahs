@@ -748,14 +748,12 @@ Python algorithms and computational notebooks will be embedded here.
 </div>
 </div>
 
-<div id="videoModal" class="fixed inset-0 bg-black/90 hidden z-50 items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeVideo()">
-<div class="relative w-full max-w-4xl" onclick="event.stopPropagation()">
-<button class="absolute -top-10 right-0 text-white font-mono text-sm uppercase tracking-widest hover:text-gray-300 transition-colors" onclick="closeVideo()">
+<div id="videoModal" class="fixed inset-0 bg-black/90 hidden z-50 flex-col items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeVideo()">
+<button class="fixed top-4 right-4 z-[60] text-white font-mono text-sm uppercase tracking-widest bg-black/60 rounded px-3 py-2 hover:text-gray-300 transition-colors" onclick="closeVideo()">
 [ Close ]
 </button>
-<div class="w-full aspect-video bg-black rounded shadow-2xl overflow-hidden">
-<iframe id="videoFrame" src="" class="w-full h-full" allow="autoplay" allowfullscreen="" frameborder="0"></iframe>
-</div>
+<div class="relative w-full max-w-4xl mx-auto" style="aspect-ratio: 16 / 9;" onclick="event.stopPropagation()">
+<iframe id="videoFrame" src="" class="absolute inset-0 w-full h-full bg-black rounded shadow-2xl" allow="autoplay; encrypted-media; fullscreen" allowfullscreen="" frameborder="0"></iframe>
 </div>
 </div>
 
@@ -824,6 +822,7 @@ const frame = document.getElementById('videoFrame');
 frame.src = 'https://drive.google.com/file/d/' + DRIVE_VIDEO_ID + '/preview';
 modal.classList.remove('hidden');
 modal.classList.add('flex');
+modal.style.display = 'flex';
 setTimeout(() => {
 modal.classList.remove('opacity-0');
 modal.classList.add('opacity-100');
@@ -839,6 +838,7 @@ modal.classList.add('opacity-0');
 setTimeout(() => {
 modal.classList.remove('flex');
 modal.classList.add('hidden');
+modal.style.display = 'none';
 frame.src = '';
 }, 300);
 document.body.style.overflow = '';
